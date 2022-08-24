@@ -1,0 +1,42 @@
+<odoo>
+
+#Degree Tree view
+	<record id="view_degree_tree" model="ir.ui.view">
+
+		<field name="name">degree.tree</field>
+		<field name="model">hospital.degree</field>
+		<field name="arch" type="xml">
+			
+			<tree>
+				<field name="degree"></field>
+
+			</tree>
+			
+		</field>
+
+	</record>
+
+
+
+	#Degree Form view
+
+	<record id="view_degree_form" model="ir.ui.view">
+
+		<field name="name">degree.form</field>
+		<field name="model">hospital.degree</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<field name="degree"></field>
+						
+					</group>
+				</sheet>
+				
+
+			</form>
+		</field>
+
+	</record>
+
+</odoo>

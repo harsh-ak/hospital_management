@@ -1,0 +1,132 @@
+<odoo>
+
+	
+
+
+	#Ref Doctor Tree view
+	<record id="view_ref_doctor_tree" model="ir.ui.view">
+
+		<field name="name">refdoctor.tree</field>
+		<field name="model">hospital.doctor</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"></field>
+				<field name="degree_ids"></field>
+
+
+			</tree>
+			
+		</field>
+
+	</record>
+
+
+	
+
+
+#ACTIONS
+
+
+	#Patient Action	
+
+	<record id="action_hospital_patient"
+		model="ir.actions.act_window">
+		<field name="name">Patients</field>
+		<field name="res_model">hospital.patient</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- #Ref Doctor Action
+
+	<record id="action_ref_doctor"
+		model="ir.actions.act_window">
+		<field name="name">Doctors</field>
+		<field name="res_model">hospital.doctor</field>
+		<field name="view_mode">tree,form</field>
+	</record> -->
+
+
+	#Degree Action
+
+	<record id="action_degree"
+		model="ir.actions.act_window">
+		<field name="name">Degree</field>
+		<field name="res_model">hospital.degree</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	#City Action
+
+	<record id="action_city"
+		model="ir.actions.act_window">
+		<field name="name">City</field>
+		<field name="res_model">hospital.city</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+
+	#Doctor Action
+
+	<record id="action_doctor"
+		model="ir.actions.act_window">
+		<field name="name">Doctor</field>
+		<field name="res_model">hospital.doctor</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	#DoctorType Action
+
+	<record id="action_doctortype"
+		model="ir.actions.act_window">
+		<field name="name">Doctor Type</field>
+		<field name="res_model">hospital.typesofdoc</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+
+	#Menus
+
+
+	<menuitem id = "hospital_main_menu" 
+		name ="Hospital" 
+
+		sequence = "0"/>
+
+
+	<menuitem id = "patient_main_menu"
+	name = "Details"
+	parent="hospital_main_menu"/>
+
+	<menuitem id="patient_sub_menu"
+		name="Patients"
+		parent="patient_main_menu"
+		action="action_hospital_patient"/>
+
+	
+
+	<menuitem id="patient_degree_submenu"
+		name="Degree"
+		parent="patient_main_menu"
+		action="action_degree"/>
+
+	<menuitem id="patient_city_submenu"
+		name="City"
+		parent="patient_main_menu"
+		action="action_city"/>	
+
+	<menuitem id="doctor_main_menu"
+	name="Doctors"
+	parent="hospital_main_menu"
+	action="action_doctor"/>
+
+	<menuitem id="doctor_sub_menu"
+		name="Doctors"
+		parent="doctor_main_menu"
+		action="action_doctor"/>
+
+	<menuitem id="doctortype_sub_menu"
+	name="Doctor Types"
+	parent="doctor_main_menu"
+	action="action_doctortype"/>
+
+</odoo>

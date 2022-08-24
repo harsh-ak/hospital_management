@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hospital_Managment.access_hospital_patient,access_hospital_patient,hospital_Managment.model_hospital_patient,base.group_user,1,1,1,1
+hospital_Managment.access_hospital_doctor,access_hospital_doctor,hospital_Managment.model_hospital_doctor,base.group_user,1,1,1,1
+hospital_Managment.access_hospital_degree,access_hospital_degree,hospital_Managment.model_hospital_degree,base.group_user,1,1,1,1
+hospital_Managment.access_hospital_city,access_hospital_city,hospital_Managment.model_hospital_city,base.group_user,1,1,1,1
+hospital_Managment.access_hospital_typesofdoc,access_hospital_typesofdoc,hospital_Managment.model_hospital_typesofdoc,base.group_user,1,1,1,1
+hospital_Managment.access_hospital_reference,access_hospital_reference,hospital_Managment.model_hospital_reference,base.group_user,1,1,1,1

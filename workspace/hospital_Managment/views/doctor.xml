@@ -1,0 +1,64 @@
+<odoo>
+
+#Doctor Tree view
+	<record id="view_doctor_tree" model="ir.ui.view">
+
+		<field name="name">doctor.tree</field>
+		<field name="model">hospital.doctor</field>
+		<field name="arch" type="xml">
+			
+			<tree>
+				<field name="name"></field>
+				<field name="degree_ids" widget="many2many_tags"></field>
+				<field name="type_id"></field>
+
+			</tree>
+			
+		</field>
+
+	</record>
+
+
+	#Doctor Form view
+
+	<record id="view_doctor_form" model="ir.ui.view">
+
+		<field name="name">doctor.form</field>
+		<field name="model">hospital.doctor</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<field name="image" widget="image" class="oe_avatar"> </field>
+
+					<group>
+
+						<group>
+							<field name="f_name"></field>
+							<field name="l_name"></field>
+							<field name="name" readonly="1"></field>
+							<field name="age"></field>
+							<field name="degree_ids" widget="many2many_tags"></field>
+						</group>
+						<group>
+							<field name="birthdate"></field>
+							<field name="type_id"></field>
+						</group>
+					</group>
+						<field name="reference_ids">
+							<tree>
+								<field name="id"/>
+								<field name="patient_id"/>
+							</tree>
+						</field>
+					<group>
+					</group>
+				</sheet>
+				
+
+			</form>
+		</field>
+
+	</record>
+
+
+</odoo>
