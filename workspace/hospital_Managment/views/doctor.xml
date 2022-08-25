@@ -10,8 +10,9 @@
 			<tree>
 				<field name="name"></field>
 				<field name="degree_ids" widget="many2many_tags"></field>
+				<field name="no_degree_count"/>
 				<field name="type_id"></field>
-
+				<field name="no_of_patients_count"/>
 			</tree>
 			
 		</field>
@@ -37,6 +38,7 @@
 							<field name="l_name"></field>
 							<field name="name" readonly="1"></field>
 							<field name="age"></field>
+							<field name="no_of_patients_count"/>
 							<field name="degree_ids" widget="many2many_tags"></field>
 						</group>
 						<group>

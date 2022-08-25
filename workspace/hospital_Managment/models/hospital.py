@@ -51,6 +51,26 @@ class Doctor(models.Model):
     type_id=fields.Many2one(comodel_name='hospital.typesofdoc',string="Type of Doctor")
     degree_ids=fields.Many2many(comodel_name='hospital.degree',string='Degree')
     reference_ids = fields.One2many(comodel_name="hospital.reference", inverse_name="referer_id", string="References Provided")
+    no_of_patients_count = fields.Integer(string=_('Patients Assigned'),compute='_compute_patients_count')
+    no_degree_count = fields.Integer(string=_('Total Degrees'),compute='_compute_degree_count',store=True)
+
+    def _compute_patients_count(self):
+        print('Self---------',self)
+        for rec in self:
+            print('Current record---Data computed for',rec)
+            print('Doctor name---Data computed for',rec.name)
+            rec.no_of_patients_count = 0
+            patients = self.env['hospital.patient'].search_count([('doctor_id','=',rec.id)])
+            # doctors = rec.search_count([('type_id','=',self.env.ref('hospital_Managment.type_oncologist').id)])
+            # print(doctors,"---------doctors--------\n\n")
+            rec.no_of_patients_count = patients
+            print('Number of Patients-----',rec.no_of_patients_count)
+
+    def _compute_degree_count(self):
+        for rec in self:
+            rec.no_degree_count=0
+            rec.no_degree_count = len(rec.degree_ids.ids)
+        
 
 
     @api.depends('birthdate')
@@ -69,7 +89,8 @@ class Doctor(models.Model):
 
     @api.model
     def create(self,vals):
-        vals['name']="Dr."+"  "+vals['f_name']+"  "+vals['l_name']
+        print(vals,"---------------------")
+        vals['name']="Dr."+"  "+vals['f_name']+"  "+ (vals['l_name'] or '')
         res=super(Doctor,self).create(vals)
         return res
 
@@ -185,6 +206,13 @@ class HospitalPatient(models.Model):
                 else:
                     type_of_patient="Minor"
             rec.type_of_patient = type_of_patient 
+
+
+class Status(models.Model):
+    _name="hospital.status" #This will be the table name.
+    _description="Status"
+
+    name=fields.Char(string=("Status"))
 
 
 

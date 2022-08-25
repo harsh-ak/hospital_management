@@ -1,0 +1,46 @@
+<odoo>
+
+#Appointments Tree view
+	<record id="view_appointments_tree" model="ir.ui.view">
+
+		<field name="name">appointments.tree</field>
+		<field name="model">hospital.appointments</field>
+		<field name="arch" type="xml">
+			
+			<tree decoration-success="status_id == 'DONE'" decoration-danger="status_id == 'IN PROGRESS'">
+				<field name="patient_name_id"></field>
+				<field name="doctor_name"></field>
+				<field name="status_id"></field>
+
+			</tree>
+			
+		</field>
+
+	</record>
+
+
+
+	#Degree Form view
+
+	<record id="view_appointments_form" model="ir.ui.view">
+
+		<field name="name">appointments.form</field>
+		<field name="model">hospital.appointments</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<field name="patient_name_id"></field>
+						<field name="doctor_name"></field>
+						<field name="status_id"></field>
+						
+					</group>
+				</sheet>
+				
+
+			</form>
+		</field>
+
+	</record>
+
+</odoo>

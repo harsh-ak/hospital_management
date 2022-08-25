@@ -1,1 +1,1 @@
-from . import hospital
+from . import hospital,appointments

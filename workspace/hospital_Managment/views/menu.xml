@@ -84,6 +84,25 @@
 	</record>
 
 
+	#Appointments Action
+
+	<record id="action_appointments"
+		model="ir.actions.act_window">
+		<field name="name">Appointments</field>
+		<field name="res_model">hospital.appointments</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	#Status Action
+
+	<record id="action_status"
+		model="ir.actions.act_window">
+		<field name="name">Status</field>
+		<field name="res_model">hospital.status</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+
 	#Menus
 
 
@@ -109,6 +128,12 @@
 		parent="patient_main_menu"
 		action="action_degree"/>
 
+	<menuitem id="status_submenu"
+		name="Status"
+		parent="patient_main_menu"
+		action="action_status"/>
+	
+
 	<menuitem id="patient_city_submenu"
 		name="City"
 		parent="patient_main_menu"
@@ -128,5 +153,10 @@
 	name="Doctor Types"
 	parent="doctor_main_menu"
 	action="action_doctortype"/>
+
+	<menuitem id="appointments_main_menu"
+	name="Appointments"
+	parent="hospital_main_menu"
+	action="action_appointments"/>
 
 </odoo>
