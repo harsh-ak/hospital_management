@@ -1,0 +1,104 @@
+
+<odoo>	
+	#Medicine Action
+
+	<record id="action_medicine"
+		model="ir.actions.act_window">
+		<field name="name">Medicine</field>
+		<field name="res_model">hospital.medicine</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	#Medicine Details Action
+	<record id="action_medicine_details"
+		model="ir.actions.act_window">
+		<field name="name">Medicine Details</field>
+		<field name="res_model">hospital.medicine</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+#Medicine company Action
+	<record id="action_medicine_company"
+		model="ir.actions.act_window">
+		<field name="name">Medicine company</field>
+		<field name="res_model">hospital.medicinecompany</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+
+	#Medicine Type Action
+	<record id="action_medicine_type"
+		model="ir.actions.act_window">
+		<field name="name">Medicine type</field>
+		<field name="res_model">hospital.medicinetype</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+<menuitem id="medicine_main_menu"
+	name="Medicine"
+	parent="hospital_main_menu"
+	action="action_medicine"/>
+
+	<menuitem id="medicine_details_sub_menu"
+	name="Medicine details"
+	parent="medicine_main_menu"
+	action="action_medicine_details"/>
+
+
+		<menuitem id="medicine_company_sub_menu"
+	name="Medicine company"
+	parent="medicine_main_menu"
+	action="action_medicine_company"/>
+
+	<menuitem id="medicine_type_sub_menu"
+	name="Medicine type"
+	parent="medicine_main_menu"
+	action="action_medicine_type"/>
+
+
+	#Medicine Tree view
+	<record id="view_medicines_tree" model="ir.ui.view">
+		<field name="name">medicines.tree</field>
+		<field name="model">hospital.medicine</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"></field>
+				<field name="med_type_id"></field>
+				<field name="med_company_id"></field>
+				<field name="strips"></field>ssss
+					
+			</tree>
+			
+		</field>
+
+	</record>
+
+
+
+	#Medicine Form view
+
+	<record id="view_medicines_form" model="ir.ui.view">
+
+		<field name="name">medicines.form</field>
+		<field name="model">hospital.medicine</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+
+						<field name="name"></field>
+						<field name="med_type_id"></field>
+						<field name="med_company_id"></field>
+						<field name="strips"></field>
+						
+					</group>
+				</sheet>
+			</form>
+		</field>
+
+	</record>
+
+
+</odoo>
+
+

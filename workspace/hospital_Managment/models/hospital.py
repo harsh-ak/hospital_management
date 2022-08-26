@@ -90,7 +90,7 @@ class Doctor(models.Model):
     @api.model
     def create(self,vals):
         print(vals,"---------------------")
-        vals['name']="Dr."+"  "+vals['f_name']+"  "+ (vals['l_name'] or '')
+        vals['name']="Dr."+"  "+(vals['f_name'] or '')+"  "+ (vals['l_name'] or '')
         res=super(Doctor,self).create(vals)
         return res
 

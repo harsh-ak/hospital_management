@@ -3,26 +3,14 @@
 
 #Appointments Tree view
 	<record id="view_appointments_tree" model="ir.ui.view">
-
-
-	    
-
-	       
-
 		<field name="name">appointments.tree</field>
 		<field name="model">hospital.appointments</field>
 		<field name="arch" type="xml">
-
-
-			
-			<tree decoration-success="status_id == 'DONE'" decoration-danger="status_id == 'IN PROGRESS'">
-
-				
-
-
+			<tree>
+			<!-- <tree decoration-success="status_id == 1"> -->
 				<field name="patient_name_id"></field>
 				<field name="doctor_name"></field>
-				<field name="status_id"></field>
+				<field name="status_id"/>
 				<button name="count_app" string="Status" type="object" class="oe_highlight"/>
 
 			</tree>
@@ -42,15 +30,14 @@
 		<field name="arch" type="xml">
 			<form>
 				<sheet>
-					<group>
+					<group >
 						<field name="patient_name_id"></field>
-						<field name="doctor_name"></field>
+						<field name="doctor_name" decoration-success="status_id == 1"/>
+							<!-- attrs="{'readonly':['|',('status_id','=',%(hospital_Managment.status_cancel)d),('patient_name_id','=',20)]}" -->
+							<!-- </field> -->
 						<field name="status_id"></field>
-						
 					</group>
 				</sheet>
-				
-
 			</form>
 		</field>
 

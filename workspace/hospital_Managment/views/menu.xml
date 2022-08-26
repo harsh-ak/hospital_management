@@ -113,7 +113,7 @@
 
 
 	<menuitem id = "patient_main_menu"
-	name = "Details"
+	name = "Patients"
 	parent="hospital_main_menu"/>
 
 	<menuitem id="patient_sub_menu"
@@ -123,11 +123,7 @@
 
 	
 
-	<menuitem id="patient_degree_submenu"
-		name="Degree"
-		parent="patient_main_menu"
-		action="action_degree"/>
-
+	
 	<menuitem id="status_submenu"
 		name="Status"
 		parent="patient_main_menu"
@@ -153,6 +149,13 @@
 	name="Doctor Types"
 	parent="doctor_main_menu"
 	action="action_doctortype"/>
+
+
+	<menuitem id="patient_degree_submenu"
+		name="Degree"
+		parent="doctor_main_menu"
+		action="action_degree"/>
+
 
 	<menuitem id="appointments_main_menu"
 	name="Appointments"

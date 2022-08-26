@@ -1,5 +1,12 @@
 <odoo>
 
+	<record id="action_hospital_patient"
+		model="ir.actions.act_window">
+		<field name="name">Patients</field>
+		<field name="res_model">hospital.patient</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
 #Doctor Tree view
 	<record id="view_doctor_tree" model="ir.ui.view">
 
@@ -28,6 +35,11 @@
 		<field name="model">hospital.doctor</field>
 		<field name="arch" type="xml">
 			<form>
+				<header>
+				
+					<button name="%(hospital_Managment.action_hospital_patient)d" string="Action Button" type="action" class="btn-primary"/>
+				</header>
+				
 				<sheet>
 					<field name="image" widget="image" class="oe_avatar"> </field>
 
@@ -61,6 +73,7 @@
 		</field>
 
 	</record>
+
 
 
 </odoo>

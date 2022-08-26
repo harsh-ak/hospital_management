@@ -9,7 +9,7 @@ class Appointments(models.Model):
 
     patient_name_id=fields.Many2one(comodel_name="hospital.patient",string="Patient Name")
     doctor_name=fields.Char(compute="_compute_doctor",string="Responsible Doctor",store=True)
-    status_id=fields.Many2one(comodel_name="hospital.status",string="Status")
+    status_id=fields.Many2one(comodel_name="hospital.status",string="Status",required=True)
 
     @api.depends('patient_name_id')
     def _compute_doctor(self):
