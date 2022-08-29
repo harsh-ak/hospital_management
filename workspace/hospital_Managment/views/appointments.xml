@@ -30,7 +30,7 @@
 		<field name="arch" type="xml">
 			<form>
 				<sheet>
-					<group >
+					<group>
 						<field name="patient_name_id"></field>
 						<field name="doctor_name" decoration-success="status_id == 1"/>
 							<!-- attrs="{'readonly':['|',('status_id','=',%(hospital_Managment.status_cancel)d),('patient_name_id','=',20)]}" -->

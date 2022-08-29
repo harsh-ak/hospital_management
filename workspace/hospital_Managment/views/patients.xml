@@ -25,16 +25,38 @@
 			<field name="arch" type="xml">
 				<form>
 					<sheet>
-						<div name="button_box" position="outside">
+						<div name="button_box"  class="oe_button_box">
+
+
+
+							<button class="oe_stat_button" type="object" name="co_medicines"
+		                        icon="fa-medkit">
+		                        <div class="o_stat_info">
+		                        <field name="no_of_meds" class="o_stat_value"/>
+		                        	<span class="o_stat_text">Medicines</span>
+		                        </div>
+                        			
+                    		</button>
+
+
+
+
 		                    <button class="oe_stat_button" type="object" name="co_appointment"
 		                        icon="fa-calendar">
 		                        <div class="o_stat_info">
 		                        <field name="no_of_appo" class="o_stat_value"/>
-		                        <br></br>
 		                        	<span class="o_stat_text">Appointments</span>
 		                        </div>
                         			
                     		</button>
+
+
+
+
+                    		
+
+
+
                 		</div>
 						<field name="image" widget="image" class="oe_avatar"> </field>
 						
@@ -51,6 +73,9 @@
 								<field name="birthdate"></field>
 								<field name="weight"></field>
 								<field name="refdoctor_id"></field>
+								<!-- <field name="no_of_meds"></field> -->
+								<field name="med_presc_ids" widget="many2many_tags"></field>
+
 
 
 							</group>

@@ -61,11 +61,12 @@
 		<field name="name">medicines.tree</field>
 		<field name="model">hospital.medicine</field>
 		<field name="arch" type="xml">
-			<tree>
+			<tree decoration-danger="strips &lt; 20">
 				<field name="name"></field>
 				<field name="med_type_id"></field>
 				<field name="med_company_id"></field>
-				<field name="strips"></field>
+				<field name="strips" ></field>
+					
 					
 			</tree>
 			

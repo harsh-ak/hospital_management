@@ -126,6 +126,8 @@ class HospitalPatient(models.Model):
     type_of_patient=fields.Char(string='type')
     image=fields.Image(string='Image')
     no_of_appo=fields.Integer(string="Appointments",compute="get_no_of_appo")
+    med_presc_ids=fields.Many2many(string="Medicines Prescibed",comodel_name="hospital.medicine")
+    no_of_meds=fields.Integer(string="Medicines",compute="get_no_of_meds")
 
     city_id=fields.Many2one(comodel_name='hospital.city',string='City')
 
@@ -215,12 +217,29 @@ class HospitalPatient(models.Model):
             rec.no_of_appo=res
 
     def co_appointment(self):
-        return
-        {
+        print("inside smart button_____________")
+
+        return {
         'type':'ir.actions.act_window',
         'name':'Appointments',
         'res_model':'hospital.appointments',
         'domain':[('patient_name_id','=',self.id)],
+        'view_mode':'tree,form',
+        'target':'current'
+        }              
+    def get_no_of_meds(self):
+        for rec in self:
+            rec.no_of_meds=0
+            res=len(rec.med_presc_ids.ids)
+            rec.no_of_meds=res
+
+    def co_medicines(self):
+        print("________meds",self.med_presc_ids) 
+        return {
+        'type':'ir.actions.act_window',
+        'name':'Medicines',
+        'res_model':'hospital.medicine',
+        #'domain':[('name','=',)],
         'view_mode':'tree,form',
         'target':'current'
         }              
