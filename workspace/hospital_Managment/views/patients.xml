@@ -25,7 +25,19 @@
 			<field name="arch" type="xml">
 				<form>
 					<sheet>
+						<div name="button_box" position="outside">
+		                    <button class="oe_stat_button" type="object" name="co_appointment"
+		                        icon="fa-calendar">
+		                        <div class="o_stat_info">
+		                        <field name="no_of_appo" class="o_stat_value"/>
+		                        <br></br>
+		                        	<span class="o_stat_text">Appointments</span>
+		                        </div>
+                        			
+                    		</button>
+                		</div>
 						<field name="image" widget="image" class="oe_avatar"> </field>
+						
 
 						<group>
 							<group>

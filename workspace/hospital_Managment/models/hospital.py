@@ -125,6 +125,7 @@ class HospitalPatient(models.Model):
     doctor_id=fields.Many2one(comodel_name='hospital.doctor', string="Responsible Doctor")
     type_of_patient=fields.Char(string='type')
     image=fields.Image(string='Image')
+    no_of_appo=fields.Integer(string="Appointments",compute="get_no_of_appo")
 
     city_id=fields.Many2one(comodel_name='hospital.city',string='City')
 
@@ -206,6 +207,23 @@ class HospitalPatient(models.Model):
                 else:
                     type_of_patient="Minor"
             rec.type_of_patient = type_of_patient 
+
+
+    def get_no_of_appo(self):
+        for rec in self:
+            res=self.env["hospital.appointments"].search_count([('patient_name_id','=',rec.id)])
+            rec.no_of_appo=res
+
+    def co_appointment(self):
+        return
+        {
+        'type':'ir.actions.act_window',
+        'name':'Appointments',
+        'res_model':'hospital.appointments',
+        'domain':[('patient_name_id','=',self.id)],
+        'view_mode':'tree,form',
+        'target':'current'
+        }              
 
 
 class Status(models.Model):

@@ -65,7 +65,7 @@
 				<field name="name"></field>
 				<field name="med_type_id"></field>
 				<field name="med_company_id"></field>
-				<field name="strips"></field>ssss
+				<field name="strips"></field>
 					
 			</tree>
 			
