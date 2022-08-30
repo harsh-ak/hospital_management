@@ -66,6 +66,7 @@
 				<field name="med_type_id"></field>
 				<field name="med_company_id"></field>
 				<field name="strips" ></field>
+				<field name="strip_price"></field>
 					
 					
 			</tree>
@@ -91,6 +92,7 @@
 						<field name="med_type_id"></field>
 						<field name="med_company_id"></field>
 						<field name="strips"></field>
+						<field name="strip_price"></field>
 						
 					</group>
 				</sheet>

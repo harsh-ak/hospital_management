@@ -11,3 +11,7 @@ class Medicine(models.Model):
     med_type_id=fields.Many2one(comodel_name="hospital.medicinetype",string="Medicine Type")
     med_company_id=fields.Many2one(comodel_name="hospital.medicinecompany",string="Medicine Company")
     strips=fields.Integer(string="Strips Available")
+    strip_price=fields.Integer(string="Per Strip Price")
+
+
+    

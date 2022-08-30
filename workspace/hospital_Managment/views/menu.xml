@@ -103,6 +103,16 @@
 	</record>
 
 
+	#Bill Action
+
+	<record id="action_bill"
+		model="ir.actions.act_window">
+		<field name="name">Bill</field>
+		<field name="res_model">hospital.bill</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+
 	#Menus
 
 
@@ -161,5 +171,11 @@
 	name="Appointments"
 	parent="hospital_main_menu"
 	action="action_appointments"/>
+
+	<menuitem id="bill_main_menu"
+	name="Bills"
+	parent="hospital_main_menu"
+	action="action_bill"/>
+
 
 </odoo>

@@ -18,7 +18,8 @@
     'views/doctor.xml',
     'views/doctor_type.xml',
     'views/appointments.xml',
-    'views/medicine.xml'
+    'views/medicine.xml',
+    'views/bills.xml'
     ],
     'installable':True,
     'auto_install':False,
