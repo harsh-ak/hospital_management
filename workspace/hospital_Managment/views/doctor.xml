@@ -20,6 +20,7 @@
 				<field name="no_degree_count"/>
 				<field name="type_id"></field>
 				<field name="no_of_patients_count"/>
+				<field name="visiting_charge"/>
 			</tree>
 			
 		</field>
@@ -56,6 +57,8 @@
 						<group>
 							<field name="birthdate"></field>
 							<field name="type_id"></field>
+							<field name="visiting_charge"/>
+
 						</group>
 					</group>
 						<field name="reference_ids">

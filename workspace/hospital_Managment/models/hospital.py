@@ -53,7 +53,11 @@ class Doctor(models.Model):
     reference_ids = fields.One2many(comodel_name="hospital.reference", inverse_name="referer_id", string="References Provided")
     no_of_patients_count = fields.Integer(string=_('Patients Assigned'),compute='_compute_patients_count')
     no_degree_count = fields.Integer(string=_('Total Degrees'),compute='_compute_degree_count',store=True)
+    visiting_charge=fields.Integer(string="Visiting Charge(Rs)")
 
+
+
+    
     def _compute_patients_count(self):
         print('Self---------',self)
         for rec in self:
@@ -94,14 +98,14 @@ class Doctor(models.Model):
         res=super(Doctor,self).create(vals)
         return res
 
-    def write(self,vals):
-        if  self.f_name and self.l_name:
-            vals['name']="Dr."+"  "+vals['f_name']+"  "+vals['l_name']
-            res=super(Doctor,self).write(vals)
-            return res
-        else:
-            res=super(Doctor,self).write(vals)
-            return res
+    # def write(self,vals):
+    #     if  self.f_name and self.l_name:
+    #         vals['name']="Dr."+"  "+vals['f_name']+"  "+vals['l_name']
+    #         res=super(Doctor,self).write(vals)
+    #         return res
+    #     else:
+    #         res=super(Doctor,self).write(vals)
+    #         return res
 
     def unlink(self):
         if self.type_id.name=='Cardiologists':

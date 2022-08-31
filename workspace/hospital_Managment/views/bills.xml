@@ -8,7 +8,9 @@
 		<field name="arch" type="xml">
 			<tree>
 			<field name="patient_id"/>
-			<field name="medicine_ids"/>
+			<field name="visited_doctor"/>
+			<field name="vis_charge"/>
+			<field name="price"/>
 
 			</tree>
 			
@@ -30,6 +32,12 @@
 					<group>
 						<field name="patient_id"/>
 						<field name="medicine_ids" widget="many2many_tags"/>
+						<field name="visited_doctor" readonly="1"/>
+						<field name="vis_charge"/>
+						<field name="med_charge" readonly="1"/>
+						<field name="price"/>
+						
+
 						</group>
 				</sheet>
 			</form>
