@@ -18,14 +18,13 @@ class Bill(models.Model):
     @api.depends('patient_id')
     def cal_meds(self):
         for rec in self:
-            res=self.env['hospital.patient'].search([('name','=',rec.patient_id.name)])
-            rec.medicine_ids=res.med_presc_ids
-
-        for rec in self:
-            rec.visited_doctor=" "
-            res=self.env['hospital.patient'].search([('name','=',rec.patient_id.name)])
-            rec.visited_doctor=res.doctor_id.name
-
+            rec.medicine_ids = False
+            rec.visited_doctor = False
+            if rec.patient_id:
+                print("computing medicine_ids for---",rec)
+                # res=self.env['hospital.patient'].search([('id','=',rec.patient_id.id)])
+                rec.medicine_ids = rec.patient_id.med_presc_ids
+                rec.visited_doctor = rec.patient_id.doctor_id.name
 
 
     @api.depends('visited_doctor')
@@ -39,7 +38,8 @@ class Bill(models.Model):
     @api.depends('medicine_ids')
     def cal_bill(self):
         summ=0
-        for rec in self: 
+        for rec in self:
+            print("computing bill for---",rec)
             rec.price=""
             # rec.vis_charge=0
             for meds in rec.medicine_ids:

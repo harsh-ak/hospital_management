@@ -8,10 +8,11 @@
     This is Hospital Management System.
     """,
     'sequence':-500,
-    'depends': ['base'],
+    'depends': ['base','mail'],
     'data': [
     "data/doctor_type_data.xml",
     'security/ir.model.access.csv',
+    'wizard/cancel_appointment.xml',
     'views/patients.xml',
     'views/menu.xml',
     'views/degree.xml',
@@ -19,7 +20,9 @@
     'views/doctor_type.xml',
     'views/appointments.xml',
     'views/medicine.xml',
-    'views/bills.xml'
+    'views/bills.xml',
+    'views/room.xml',
+
     ],
     'installable':True,
     'auto_install':False,

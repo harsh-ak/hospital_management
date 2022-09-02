@@ -1,0 +1,51 @@
+<odoo>
+	 
+
+#Room Tree view
+	<record id="view_hospital_room_tree" model="ir.ui.view">
+		<field name="name">hospital.room</field>
+		<field name="model">hospital.room</field>
+		<field name="arch" type="xml">
+			<tree>
+			<field name="name"/>
+			<field name="availability"/>
+			<field name="floor"/>
+			<field name="type_of"/>
+			<field name="alloted_to"/>
+
+			</tree>
+			
+		</field>
+
+	</record>
+
+
+
+	#Room Form view
+
+	<record id="view_hospital_room_form" model="ir.ui.view">
+
+		<field name="name">hospital.room</field>
+		<field name="model">hospital.room</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+
+
+						<field name="name"/>
+						<field name="availability"/>
+						<field name="floor"/>
+						<field name="type_of"/>
+						<field name="alloted_to"/>
+						
+							
+
+						</group>
+				</sheet>
+			</form>
+		</field>
+
+	</record>
+
+</odoo>

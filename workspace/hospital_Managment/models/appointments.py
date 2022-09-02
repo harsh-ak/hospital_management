@@ -9,7 +9,7 @@ class Appointments(models.Model):
 
     patient_name_id=fields.Many2one(comodel_name="hospital.patient",string="Patient Name")
     doctor_name=fields.Char(compute="_compute_doctor",string="Responsible Doctor",store=True)
-    status_id=fields.Many2one(comodel_name="hospital.status",string="Status",required=True)
+    status=fields.Selection([('DONE','DONE'),('DRAFT','DRAFT'),('IN PROGRESS','IN PROGRESS'),('CANCEL','CANCEL')],string="Status")
 
     @api.depends('patient_name_id')
     def _compute_doctor(self):
@@ -23,13 +23,17 @@ class Appointments(models.Model):
     def count_app(self):
         # print("Button clicked_--------________________")
         # print("_________self_________",self)       		
-        res=self.status_id.name
+        res=self.status
         a=""
         message="Appointment Status is:"+res
         if res=="DONE":
             a="success"
-        else:
-            a="warning"    
+        elif res=="IN PROGESS":
+            a="info"    
+        elif res=="DRAFT":
+            a="info"
+        elif res=="CANCEL":
+            a="info"        
 
         print("_____",res)
         return{

@@ -8,7 +8,7 @@
 			<field name="arch" type="xml">
 				<tree>
 					<field name="name"></field>
-					<field name="age"></field>
+					<field name="room_id"></field>
 
 				</tree>
 				
@@ -75,12 +75,21 @@
 								<field name="refdoctor_id"></field>
 								<!-- <field name="no_of_meds"></field> -->
 								<field name="med_presc_ids" widget="many2many_tags"></field>
+								<field name="room_id"></field>
 
 
 
 							</group>
 						</group>
 					</sheet>
+
+
+					<div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+
+                    </div>
 					
 
 				</form>

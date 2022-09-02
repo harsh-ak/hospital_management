@@ -36,7 +36,7 @@
 						<field name="vis_charge"/>
 						<field name="med_charge" readonly="1"/>
 						<field name="price"/>
-						
+							
 
 						</group>
 				</sheet>

@@ -1,0 +1,26 @@
+<odoo>
+
+	Cancel Appointment Form view
+
+	<record id="view_cancel_appointment_form" model="ir.ui.view">
+
+		<field name="name">cancel.appointment.form</field>
+		<field name="model">cancel.appointment.wizard</field>
+		<field name="arch" type="xml">
+			<form>
+
+					<group>
+						<field name="appointment_id" domain="[('status','=','DRAFT')]" widget="many2many_tags"/>
+					</group>
+
+				<footer>
+                    <button name ="button_cancel_appo" string="Cancel Appointment"  class="btn-primary" type="object"/>
+                    <button string="Discard" class="btn-secondary" special="cancel"/>
+                </footer>
+				
+			</form>
+		</field>
+
+	</record>
+
+</odoo>

@@ -5,8 +5,8 @@
 			<field name="name">Oncologistttt</field>
 		</record>
 
-		<record id="status_cancel" model="hospital.status">
-			<field name="name">Cancel</field>
-		</record>
+		<!-- <record id="status_cancel" model="hospital.status">
+			<field name="name">CANCEL</field>
+		</record> -->
 	</data>
 </odoo>
