@@ -5,7 +5,7 @@ from odoo.exceptions import ValidationError
 
 class HospitalPatient(models.Model):
     _name="hospital.patient" #This will be the table name.
-    _description="Hospital Patient Table "
+    _description="Hospital Patient Tablee "
     _inherit=['mail.thread','mail.activity.mixin']
 
     #This all will be the columns of the table.
